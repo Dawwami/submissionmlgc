@@ -3,14 +3,14 @@ const { Firestore } = require('@google-cloud/firestore');
 async function storeData(id, data) {
   const db = new Firestore();
  
-  const predictCollection = db.collection('prediction');
+  const predictCollection = db.collection('predictions');
   return predictCollection.doc(id).set(data);
 }
 
 async function getData() {
   try {
     const db = new Firestore();
-    const snapshot = await db.collection('prediction').get();
+    const snapshot = await db.collection('predictions').get();
     if (snapshot.empty) {
       console.log('No matching documents.');
       return [];

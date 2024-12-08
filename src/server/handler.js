@@ -15,7 +15,6 @@ async function postPredictHandler(request, h) {
     "id": id,
     "result": label,
     "suggestion": suggestion,
-    "confidenceScore": confidenceScore,
     "createdAt": createdAt
   };
 
